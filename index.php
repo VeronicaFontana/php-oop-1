@@ -20,10 +20,10 @@ require_once __DIR__ . "/db/db.php";
   <title>Movies</title>
 </head>
 <body>
-  <div class="container">
+  <div class="container mt-3 d-flex justify-content-between">
     <?php foreach($movies as $movie): ?>
       <div class="card" style="width: 18rem;">
-        <img src="img/<?php echo $movie->image->file_name ?>" class="card-img-top" alt="<?php echo $movie->image->name ?>">
+        <img src="img/<?php echo $movie->image->file_name ?>" class="card-img-top h-100" alt="<?php echo $movie->image->name ?>">
         <div class="card-body">
           <h5 class="card-title"><?php echo $movie->title ?></h5>
           <p class="card-text"><?php echo $movie->genre ?></p>
