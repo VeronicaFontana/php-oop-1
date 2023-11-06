@@ -10,7 +10,7 @@ class Movie{
     $this -> title = $_title;
     $this -> genre = $_genre;
     $this -> duration = $_duration;
-    $this -> image = $image;
+    $this -> image = $_image;
   }
 
   public function setImage(Media $_image){
