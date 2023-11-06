@@ -1,6 +1,7 @@
 <?php
 
-
+require_once __DIR__ . "/Model/Media.php";
+require_once __DIR__ . "/Model/Movie.php";
 
 
 ?>
