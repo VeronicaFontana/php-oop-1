@@ -1,7 +1,9 @@
 <?php
 
+require_once __DIR__ . "/Model/Production.php";
 require_once __DIR__ . "/Model/Media.php";
 require_once __DIR__ . "/Model/Movie.php";
+require_once __DIR__ . "/Model/TvSerie.php";
 require_once __DIR__ . "/db/db.php";
 
 
@@ -17,17 +19,17 @@ require_once __DIR__ . "/db/db.php";
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
-  <title>Movies</title>
+  <title>Productions</title>
 </head>
 <body>
   <div class="container mt-3 d-flex justify-content-between">
-    <?php foreach($movies as $movie): ?>
+    <?php foreach($productions as $production): ?>
       <div class="card" style="width: 18rem;">
-        <img src="img/<?php echo $movie->image->file_name ?>" class="card-img-top h-100" alt="<?php echo $movie->image->name ?>">
+        <img src="img/<?php echo $production->image->file_name ?>" class="card-img-top h-100" alt="<?php echo $production->image->name ?>">
         <div class="card-body">
-          <h5 class="card-title"><?php echo $movie->title ?></h5>
-          <p class="card-text"><?php echo $movie->genre ?></p>
-          <p class="card-text"><?php echo $movie->duration ?> min</p>
+          <h5 class="card-title"><?php echo $production->title ?></h5>
+          <p class="card-text"><?php echo $production->genre ?></p>
+          <p class="card-text"><?php echo implode(" - ", $production->cast) ?></p>
         </div>
       </div>
     <?php endforeach; ?>
