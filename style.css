@@ -1,0 +1,12 @@
+body{
+  background-color: bisque;
+}
+
+.card{
+  width: 30px;
+  margin: 20px 10px;
+}
+
+img{
+  height: 400px;
+}
