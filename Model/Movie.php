@@ -1,19 +1,13 @@
 <?php
 
-class Movie{
-  public $title;
-  public $genre;
+class Movie extends Production{
   public $duration;
-  public $image;
 
-  public function __construct(string $_title,string $_genre,int $_duration, Media $_image = null){
-    $this -> title = $_title;
-    $this -> genre = $_genre;
-    $this -> duration = $_duration;
-    $this -> image = $_image;
+  public function __construct(int $_duration, string $_title,string $_genre, array $_cast, Media $_image = null){
+    $this->duration = $_duration;
+
+    parent::__construct( $_title, $_genre,  $_cast,  $_image)
   }
 
-  public function setImage(Media $_image){
-    $this -> image = $_image;
-  }
+  
 } 
