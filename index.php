@@ -1,5 +1,6 @@
 <?php
 
+require_once __DIR__ . "/Traits/Year.php";
 require_once __DIR__ . "/Model/Production.php";
 require_once __DIR__ . "/Model/Media.php";
 require_once __DIR__ . "/Model/Movie.php";
@@ -33,6 +34,7 @@ require_once __DIR__ . "/db/db.php";
           <h5 class="card-title"><?php echo $production->title ?></h5>
           <p class="card-text"><?php echo $production->genre ?></p>
           <p class="card-text"><?php echo implode(" - ", $production->cast) ?></p>
+          <p class="card-text">Anno di pubblicazione: <?php echo $production->publication_year ?></p>
           <p class="card-text">Tipo: <?php echo get_class($production) ?></p>
         </div>
       </div>
