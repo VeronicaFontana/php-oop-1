@@ -13,7 +13,13 @@ class Production{
   public function __construct(string $_title,string $_genre, array $_cast, Media $_image = null, int $_publication_year){
     $this -> title = $_title;
     $this -> genre = $_genre;
-    $this -> cast = $_cast;
+
+      if(empty($_cast)){
+        throw new Exception("Mancano gli attori!");
+      }else{
+        $this -> cast = $_cast;
+      }
+    
     $this -> image = $_image;
     $this-> publication_year = $_publication_year;
   }

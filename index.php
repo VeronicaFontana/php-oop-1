@@ -1,11 +1,17 @@
 <?php
 
-require_once __DIR__ . "/Traits/Year.php";
-require_once __DIR__ . "/Model/Production.php";
-require_once __DIR__ . "/Model/Media.php";
-require_once __DIR__ . "/Model/Movie.php";
-require_once __DIR__ . "/Model/TvSerie.php";
-require_once __DIR__ . "/db/db.php";
+
+
+try{
+  require_once __DIR__ . "/Traits/Year.php";
+  require_once __DIR__ . "/Model/Production.php";
+  require_once __DIR__ . "/Model/Media.php";
+  require_once __DIR__ . "/Model/Movie.php";
+  require_once __DIR__ . "/Model/TvSerie.php";
+  require_once __DIR__ . "/db/db.php";
+}catch(Exception $e){
+  $error = $e->getMessage();
+}
 
 
 ?>
@@ -26,6 +32,11 @@ require_once __DIR__ . "/db/db.php";
 </head>
 <body>
   <h1 class="text-center mt-3">FILM AND TV SERIES</h1>
+  <?php if(isset($error)): ?>
+    <div class="alert alert-danger" role="alert">
+      <?php echo $error ?>
+    </div>
+  <?php else: ?>
   <div class="container mt-3 d-flex flex-wrap">
     <?php foreach($productions as $production): ?>
       <div class="card" style="width: 18rem;">
@@ -40,5 +51,6 @@ require_once __DIR__ . "/db/db.php";
       </div>
     <?php endforeach; ?>
   </div>
+  <?php endif; ?>
 </body>
 </html>
